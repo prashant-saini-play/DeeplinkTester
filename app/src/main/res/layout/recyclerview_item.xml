@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        style="@style/deeplink_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/space_16">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:paddingHorizontal="@dimen/space_16"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <ImageView
+            android:id="@+id/copyButton"
+            android:layout_width="@dimen/space_24"
+            android:layout_height="@dimen/space_24"
+            android:layout_marginRight="@dimen/space_8"
+            app:srcCompat="@drawable/baseline_content_copy_24" />
+
+
+        <ImageView
+            android:id="@+id/deleteButton"
+            android:layout_width="@dimen/space_24"
+            android:layout_height="@dimen/space_24"
+            android:layout_marginRight="@dimen/space_8"
+            app:srcCompat="@drawable/baseline_delete_forever_24" />
+
+
+        <ImageView
+            android:id="@+id/playButton"
+            android:layout_width="@dimen/space_24"
+            android:layout_height="@dimen/space_24"
+            android:layout_marginRight="@dimen/space_16"
+            app:srcCompat="@drawable/play_arrow_24" />
+
+    </LinearLayout>
+
+
+</layout>
