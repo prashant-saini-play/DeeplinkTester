@@ -96,7 +96,6 @@ class MainActivity : AppCompatActivity() {
                 }
             )
             deepLinkViewModel.insert(DeepLinkData(deeplink, System.currentTimeMillis()))
-            System.out.println("" + System.currentTimeMillis())
         } catch (exception: ActivityNotFoundException) {
             Toast.makeText(this, "No App found to handle this deeplink", Toast.LENGTH_LONG).show()
         } catch (exception: Exception) {
