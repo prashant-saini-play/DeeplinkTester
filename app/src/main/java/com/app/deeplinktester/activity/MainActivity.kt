@@ -6,6 +6,7 @@ import android.content.ClipboardManager
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,11 @@ import com.app.deeplinktester.databinding.ActivityMainBinding
 import com.app.deeplinktester.room.model.DeepLinkData
 import com.app.deeplinktester.viewmodel.DeepLinkViewModel
 import com.app.deeplinktester.viewmodel.DeepLinkViewModelFactory
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.LoadAdError
+import com.google.android.gms.ads.MobileAds
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,12 +37,24 @@ class MainActivity : AppCompatActivity() {
 
     private var adapter: DeepLinkListAdapter? = null
     private var binding: ActivityMainBinding? = null
+    private var mAdView: AdView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        MobileAds.initialize(this) {
+            initializeAdView()
+        }
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setUpUi()
+    }
+
+    private fun initializeAdView() {
+        mAdView = findViewById<View>(R.id.adView) as? AdView
+        val adRequest: AdRequest = AdRequest.Builder().build()
+        mAdView?.loadAd(adRequest)
     }
 
     private fun setUpUi() {

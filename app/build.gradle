@@ -16,8 +16,8 @@ android {
         applicationId "com.app.deeplinktester"
         minSdk 21
         targetSdk 33
-        versionCode 3
-        versionName "1.1.0"
+        versionCode 4
+        versionName "1.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -58,6 +58,10 @@ dependencies {
     // Lifecycle components
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.0"
+
+    // AdMob SDK
+    implementation "com.google.android.gms:play-services-ads:22.2.0"
+
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
